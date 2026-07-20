@@ -1,0 +1,26 @@
+.lab-page {
+    background:#050505;
+    color:#00ff41;
+    padding:30px;
+    border:1px solid #00ff41;
+    box-shadow:0 0 20px #00ff41;
+}
+
+
+.lab-page h1,
+.lab-page h2,
+.lab-page h3 {
+    color:#00ff41;
+    font-family:"Courier New", monospace;
+}
+
+
+.lab-page p,
+.lab-page li {
+    color:#b7ffb7;
+}
+
+
+.lab-page a {
+    color:#00ffff;
+}
