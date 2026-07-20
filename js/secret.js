@@ -1,51 +1,32 @@
-// Secret Lab Entrance
-
-let secretClick = 0;
-let timer = null;
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const logo = document.getElementById("secret-logo");
 
-    if (!logo) {
-        console.log("secret logo not found");
-        return;
-    }
+    if (!logo) return;
 
+    let clickCount = 0;
 
     logo.addEventListener("click", function (e) {
 
         e.preventDefault();
 
-        secretClick++;
+        clickCount++;
 
-        clearTimeout(timer);
+        if (clickCount === 5) {
 
-        timer = setTimeout(() => {
-            secretClick = 0;
-        }, 2000);
-
-
-        if (secretClick === 5) {
-
-            secretClick = 0;
-
-            let password = prompt(
-                "🔐 Secret Laboratory\n请输入访问密码:"
-            );
-
+            const password = prompt("Enter secret password:");
 
             if (password === "Fengyin") {
 
-                window.location.href =
-                "/lab/";
+                window.location.href = "/lab/";
 
             } else {
 
-                alert("❌ Access Denied");
+                alert("Wrong password");
 
             }
 
+            clickCount = 0;
         }
 
     });
